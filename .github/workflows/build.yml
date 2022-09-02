@@ -10,6 +10,8 @@ jobs:
   execute:
     runs-on: ubuntu-latest
     concurrency: post-${{ github.ref }}
+    env:
+      ADS_DEV_KEY: ${{ secrets.ADS_DEV_KEY }}
     steps:
       - uses: adrn-blog/execute-post@main
         with:
